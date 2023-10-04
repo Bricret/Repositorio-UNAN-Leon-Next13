@@ -1,6 +1,6 @@
 export const exa_tesis = [
     {
-        title: "analisis",
+        title: "analisis proteico",
         autor: "Altamirano, Wilton Antonio, Mazariego, Michael Danilo, Medina, Héctor Noel, Dávila Prado, Indiana tutora",
         palabrasClave: "COCINA NICARAGÜENSE - LEÓN (NICARAGUA), GASTRONOMÍA, COMIDAS TÍPICAS, RECETAS DE COCINA",  
         fecha: "2010",
@@ -10,7 +10,7 @@ export const exa_tesis = [
         link: "http://riul.unanleon.edu.ni:8080/jspui/bitstream/123456789/3578/1/219588.pdf",
     },
     {
-        title: "analisis",
+        title: "analisis celular",
         autor: "Gamez Guido, Ana Graciela, Guido Martínez, Arlet de la Concepción, Juárez Burgos, Osmin tutor",
         palabrasClave: "ADMINISTRACIÓN DE INDUSTRIAS Y SERVICIOS, SERVICIOS AL CLIENTE, CONTROL DE CALIDAD, CALIDAD DE LOS SERVICIOS, SATISFACCIÓN DEL CLIENTE",
         fecha: "2018",
