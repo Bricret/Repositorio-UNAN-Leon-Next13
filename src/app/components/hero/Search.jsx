@@ -19,7 +19,7 @@ export const Search = () => {
     if (formState.searchText === undefined || formState.searchText.length <= 1 ){
       setError(true);
     } else {
-      router.push(`/${searchText.toLocaleLowerCase()}`);
+      router.push(`/buscador/${searchText.toLocaleLowerCase()}`);
     }
   }
 

@@ -1,11 +1,12 @@
-import Link from "next/link";
-import { Footer2 } from "../components/Footers/Footer2";
-import { LogoType } from "../components/logo/LogoType";
+import { Footer2 } from "../../components/Footers/Footer2";
+import { LogoType } from "../../components/logo/LogoType";
+import { InfoCards } from "../components/InfoCards";
 
 export default function dashPage ({params}) {
     const { id } = params;
     const decodedId = decodeURIComponent(id);
-    const wordStripped = decodedId.replace("+", " ");
+    const searchWord = decodedId.replace(/-/g, ' ');
+
 
     return (
         <div className="flex flex-col h-screen w-screen bg-white dark:bg-zinc-900">
@@ -14,7 +15,7 @@ export default function dashPage ({params}) {
                 <div className="flex items-center space-x-4">
                 <LogoType type={false}/>
                 </div>
-                <p className="bg-white">{wordStripped}</p>
+                <p className="bg-white">{searchWord}</p>
                 <div className="flex items-center space-x-4">
                 <button size="icon" variant="ghost">
                     <svg
@@ -62,17 +63,9 @@ export default function dashPage ({params}) {
                     </div>
                 </nav>
                 </aside>
-                <main className="flex-1 overflow-auto p-4">
-                <div className="grid gap-4">
-                    <div className="h-64 rounded-lg bg-zinc-100 dark:bg-zinc-800" >
-                    </div>
-                    <div className="h-64 rounded-lg bg-zinc-100 dark:bg-zinc-800" />
-                </div>
-                </main>
+                <InfoCards  title={decodedId} />
             </div>
-            {/* <footer className="flex items-center justify-between px-6 py-4 border-t border-zinc-200 dark:border-zinc-800">
-            </footer> */}
-                <Footer2 />
+            <Footer2 />
         </div>
     )
 }
