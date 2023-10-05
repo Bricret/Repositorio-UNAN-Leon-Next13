@@ -14,11 +14,12 @@ export const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let searchText = encodeURIComponent(formState.searchText);
-    searchText = searchText.replace(/%20/g, '+');
+
     if (formState.searchText === undefined || formState.searchText.length <= 1 ){
       setError(true);
     } else {
+      let searchText = encodeURIComponent(formState.searchText.trim());
+      searchText = searchText.replace(/%20/g, '-');
       router.push(`/buscador/${searchText.toLocaleLowerCase()}`);
     }
   }

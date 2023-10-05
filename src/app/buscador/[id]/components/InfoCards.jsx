@@ -1,15 +1,12 @@
-import Image from "next/image";
-import { getArtByTitle } from "../../helpers/getArtByTitle"
-import logoQwick from "../../../../../public/img/qwikLogo.webp";
-import Link from "next/link";
+// import Image from "next/image";
+// import logoQwick from "../../../../../public/img/qwikLogo.webp";
+// import Link from "next/link";
 
 export const InfoCards = ({ title }) => {
 
-    const tesis = getArtByTitle(title);
-
   return (
 <main className="flex-1 overflow-auto p-4">
-    <div className="grid gap-4">
+    {/* <div className="grid gap-4">
         {
             tesis.map(art => (
                 <div className="h-64 rounded-lg bg-zinc-200 dark:bg-zinc-800 flex flex-row items-center" key={art.link}>
@@ -30,7 +27,8 @@ export const InfoCards = ({ title }) => {
                 </div>  
             ))
         }
-    </div>
+    </div> */}
+    <h1 className="bg-red-900" >Aqui iran las tarjetas</h1>
 </main>
   )
 }
