@@ -1,8 +1,24 @@
+'use client'
 // import Image from "next/image";
 // import logoQwick from "../../../../../public/img/qwikLogo.webp";
 // import Link from "next/link";
+import { collection, addDoc } from "firebase/firestore"; 
+import { db } from "../../../../firebase";
 
 export const InfoCards = ({ title }) => {
+
+    const testFirestore = async () => {
+        try {
+            const docRef = await addDoc(collection(db, "users"), {
+              first: "pablo",
+              last: "emilio",
+              born: 1998
+            });
+            console.log("Document written with ID: ", docRef.id);
+          } catch (e) {
+            console.error("Error adding document: ", e);
+          }
+        };
 
   return (
 <main className="flex-1 overflow-auto p-4">
@@ -28,7 +44,9 @@ export const InfoCards = ({ title }) => {
             ))
         }
     </div> */}
-    <h1 className="bg-red-900" >Aqui iran las tarjetas</h1>
+    <button onClick={testFirestore}>
+        test firebase
+    </button>
 </main>
   )
 }
