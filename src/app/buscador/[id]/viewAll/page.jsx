@@ -4,10 +4,6 @@ export default function viewPage ({params}) {
 
     const { id } = params;
 
-    const tesis = getArtByTitle(id);
-
-    console.log(tesis);
-
     return (
         <>
             <main className="flex-1 overflow-auto p-4">
