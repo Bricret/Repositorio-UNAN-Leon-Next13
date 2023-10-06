@@ -11,7 +11,7 @@ export const Hero = () => {
             <div className="col-start-1 row-start-1 mx-auto my-auto">
                 <p className=" text-white font-poppins md:text-6xl text-3xl  font-bold mb-16 cursor-default" >¿Qué estas buscando?</p>
 
-                <Search />
+                <Search type={ true }/>
 
                 <p className="font-poppins mt-12 text-[#BBB] md:text-[17px] text-[10px] cursor-default">Aquí encontraras todas las Tesis y exámenes de grado realizados por los estudiantes egresados de la UNAN-LEON </p>
             </div>

@@ -1,3 +1,4 @@
+import { Search } from "@/app/components/hero/Search"
 import { LogoType } from "@/app/components/logo/LogoType"
 
 
@@ -7,7 +8,7 @@ export const NavBar = ({ searchWord }) => {
         <div className="flex items-center space-x-4">
             <LogoType type={false}/>
         </div>
-        <p className="bg-white">{searchWord}</p>
+        <Search type={ false }/>
         <div className="flex items-center space-x-4">
         <button size="icon" variant="ghost">
             <svg
