@@ -10,7 +10,6 @@ export const HandleViewData = (val = '') => {
 
     // Leer datos de firestore
     const showData = async () => {
-        console.log(val);
         const q = query(collection(db, "tesis"), where("titulo", ">=", val));
         const querySnapshot = await getDocs(q);
         const tesisData = [];
