@@ -2,20 +2,25 @@ import logoBook from "../../../../../../public/img/logoBook.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { DropDownFilter } from "../Filtter/DropDownFilter";
+import { supabase } from "@/lib/client";
 
-export const InfoCards = ({ title }) => {
+export async function InfoCards ({ title }) {
+
+  const { data, error } = await supabase
+    .from('tesis_view')
+    .select('*')
+    .ilike('titulo_palabras_clave', `%${title}%`);
 
   return (
     <>
       <DropDownFilter />
       <main className="flex-1 overflow-auto p-4">
         <div className="grid gap-4">
-          
-          {/* -------- suspendido temporalmente ----- */}
-          {/* {tesis.map((tesi, index) => (
+
+          {data.map(( tesi ) => (
             <div
               className="h-64 rounded-lg bg-zinc-200 dark:bg-zinc-800 flex flex-row items-center"
-              key={index}
+              key={tesi.id}
             >
               <Image
                 src={logoBook}
@@ -48,7 +53,7 @@ export const InfoCards = ({ title }) => {
                 </Link>
               </div>
             </div>
-          ))} */}
+          ))}
         </div>
       </main>
     </>
