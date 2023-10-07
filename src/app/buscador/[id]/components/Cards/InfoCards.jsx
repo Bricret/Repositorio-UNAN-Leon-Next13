@@ -2,18 +2,19 @@ import logoBook from "../../../../../../public/img/logoBook.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { DropDownFilter } from "../Filtter/DropDownFilter";
-import { supabase } from "@/lib/client";
+import { HandleViewData } from "../../helpers/HandleViewData";
+
 
 export async function InfoCards ({ title }) {
 
-  const { data, error } = await supabase
-    .from('tesis_view')
-    .select('*')
-    .ilike('titulo_palabras_clave', `%${title}%`);
+  const { data } =  await HandleViewData(title);
+
 
   return (
     <>
-      <DropDownFilter />
+
+      <DropDownFilter onFilterSelect={(filter) => handleFilterSelect(filter)} />
+
       <main className="flex-1 overflow-auto p-4">
         <div className="grid gap-4">
 
