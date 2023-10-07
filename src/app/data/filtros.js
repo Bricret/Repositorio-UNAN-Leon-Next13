@@ -1,3 +1,5 @@
+
+
 const filtros = [
     {
         id: '1',
@@ -7,7 +9,7 @@ const filtros = [
             'Ingenieria en telematica',
             'Biologia',
             'Quimica',
-            'Ingenieria en Estadística',
+            'Ingenieria en Estadistica',
             'Matematica',
             'Ciencias Actuariales',
         ],
@@ -17,12 +19,12 @@ const filtros = [
         title: 'Tipo de Tesis',
         tipos: [
             'licenciatura',
-            'maestría',
+            'maestria',
         ],
     },
     {
         id: '3',
-        title: 'Fecha de Publicación',
+        title: 'Fecha de Publicacion',
         tipos: [
             '1990 - 2000',
             '2000 - 2010',
