@@ -34,7 +34,7 @@ export default async function viewPage ({params}) {
                         <p className="text-white font-bold font-roboto text-xl">Palabras_Clave: <span className="text-zinc-300 font-light text-lg">{ tesis.palabras_clave }</span></p>
                         <p className="text-white font-bold font-roboto text-xl">Peso: <span className="text-zinc-300 font-light text-lg">{ tesis.peso }</span></p>
                         <Link
-                            href={`https://tailwindcss.com/docs/gap`}
+                            href={`https://tailwindcss.com`}
                             className="middle none center mr-4 rounded-lg bg-red-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none w-40 mt-3 flex flex-row items-center justify-center"
                             >
                             Descargar <BsDownload className="pl-3 w-7 h-7"/> 
