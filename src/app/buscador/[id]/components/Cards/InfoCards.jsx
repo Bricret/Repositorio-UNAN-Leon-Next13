@@ -57,6 +57,7 @@ export async function InfoCards ({ title }) {
           ))}
         </div>
       </main>
+
     </>
   );
 };

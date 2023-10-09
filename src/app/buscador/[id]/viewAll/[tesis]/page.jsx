@@ -22,6 +22,7 @@ export default async function viewPage ({params}) {
                     src={logo} 
                     alt="logo"
                     className="rounded-lg ml-6 w-96 h-96 object-cover" 
+                    priority={true}
                 />
             </div>
             {

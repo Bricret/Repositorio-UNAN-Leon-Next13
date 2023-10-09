@@ -10,7 +10,7 @@ export default function dashPage ({params}) {
 
     return (
         <div className="flex flex-1 overflow-hidden">
-            <InfoCards  title={searchWord} />
+            <InfoCards  title={searchWord} /> 
         </div>
     )
 }
