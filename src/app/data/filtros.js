@@ -20,15 +20,6 @@ const filtros = [
             'maestria',
         ],
     },
-    {
-        id: '3',
-        title: 'Fecha de Publicacion',
-        tipos: [
-            '1990 - 2000',
-            '2000 - 2010',
-            '2010 - 2022',
-        ],
-    },
 ];
 
 export default filtros;

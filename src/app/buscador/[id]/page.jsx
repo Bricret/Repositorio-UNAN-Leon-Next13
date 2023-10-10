@@ -2,6 +2,7 @@
 import { InfoCards } from "./components/Cards/InfoCards";
 
 
+
 export default function dashPage ({params}) {
 
     const { id } = params;

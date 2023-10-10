@@ -25,7 +25,6 @@ export function InfoCards ({ title }) {
       });
 
   }, [page, title]);
-  console.log(data);
 
   return (
     <>
