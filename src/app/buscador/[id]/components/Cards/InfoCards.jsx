@@ -4,27 +4,12 @@ import logoBook from "../../../../../../public/img/logoBook.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { DropDownFilter } from "../Filtter/DropDownFilter";
-import { HandleViewData } from "../../helpers/HandleViewData";
-import { useState, useEffect } from "react";
 import { Paginator } from "./Paginator";
+import { useGetData } from "@/hooks/useGetData";
 
 export function InfoCards ({ title }) {
 
-  
-  const [page, setPage] = useState(0);
-  const [data, setData] = useState([]);
-  const itemsPerPage = 5;
-  
-  useEffect(() => {
-    const start = page * itemsPerPage;
-    const end = start + itemsPerPage - 1;
-
-    HandleViewData(title, start, end)
-      .then(({ data }) => {
-        setData(data);
-      });
-
-  }, [page, title]);
+  const {  data, page, setPage, handleFilterSelect, itemsPerPage } = useGetData(title);
 
   return (
     <>

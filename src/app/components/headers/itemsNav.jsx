@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { items } from './navItems';
 import PropTypes from 'prop-types';
 import { Search } from '../hero/Search';
+import { ButtonLogin } from './ButtonLogin';
 
 
 export const ItemsNav = ({ select = false }) => {
@@ -19,6 +20,9 @@ export const ItemsNav = ({ select = false }) => {
                         </li>
                     ))
                 }
+
+                <ButtonLogin />
+
             </ul>
         </>
     )

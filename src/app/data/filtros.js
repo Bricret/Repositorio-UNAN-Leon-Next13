@@ -1,7 +1,7 @@
 const filtros = [
     {
         id: '1',
-        title: 'Carreras',
+        title: 'Carrera',
         tipos: [
             'Ingenieria en sistemas',
             'Ingenieria en telematica',
