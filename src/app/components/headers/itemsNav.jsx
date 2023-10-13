@@ -23,6 +23,16 @@ export const ItemsNav = ({ select = false }) => {
 
                 <ButtonLogin />
 
+                <div>
+                    <form action="/auth/signout" method="post">
+                        <button className="button block" type="submit">
+                            Sign out
+                        </button>
+                    </form>
+                </div>
+
+                <Link href='/account' className='pl-3'> cuenta personal</Link>
+
             </ul>
         </>
     )

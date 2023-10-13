@@ -32,7 +32,7 @@ export default function AccountForm({ session }) {
         setAvatarUrl(data.avatar_url)
       }
     } catch (error) {
-      alert('Error loading user data!')
+      alert('Usuario No autenticado!')
     } finally {
       setLoading(false)
     }
@@ -66,11 +66,11 @@ export default function AccountForm({ session }) {
   return (
     <div className="form-widget">
       <div>
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Email </label>
         <input id="email" type="text" value={session?.user.email} disabled />
       </div>
       <div>
-        <label htmlFor="fullName">Full Name</label>
+        <label htmlFor="fullName">Full Name </label>
         <input
           id="fullName"
           type="text"
@@ -79,7 +79,7 @@ export default function AccountForm({ session }) {
         />
       </div>
       <div>
-        <label htmlFor="username">Username</label>
+        <label htmlFor="username">Username </label>
         <input
           id="username"
           type="text"
@@ -88,7 +88,7 @@ export default function AccountForm({ session }) {
         />
       </div>
       <div>
-        <label htmlFor="website">Website</label>
+        <label htmlFor="website">Website </label>
         <input
           id="website"
           type="url"

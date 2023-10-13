@@ -1,30 +1,62 @@
 'use client'
-import { Auth } from '@supabase/auth-ui-react'
-import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
-import { ThemeSupa } from '@supabase/auth-ui-shared';
+
+import { useState } from 'react';
+import { supabase } from '@/lib/client';
+
 
 export default function AuthForm() {
-  const supabase = createClientComponentClient();
+
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const result = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+      console.log(result);
+    } catch (error) {
+      console.log(error)
+    }
+
+  };
 
   return (
-    <div className='' style={{padding: '20px 0 60px 0'}}>
-        <Auth
-          supabaseClient={supabase}
-          view="sign_in"
-          appearance={{ 
-            style: {
-                button: { background: '#AB030C', color: 'white', borderRadius: '4px', border: 'none', height: '45px', width: '100%', fontSize: '14px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', cursor: 'pointer', outline: 'none', transition: 'all 0.15s ease', '&:hover': { background: '#AB030C' } },
-                anchor: { color: 'blue' },
-                input: { borderRadius: '4px', border: '1px solid #ccc', padding: '12px 15px', width: '100%', fontSize: '14px', outline: 'none', transition: 'all 0.15s ease', '&:focus': { borderColor: '#AB030C' }, '&::placeholder': { color: '#ccc' } },
-                label: { fontSize: '14px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '5px', display: 'block' },
-            },
-            theme: ThemeSupa,
-          }}
-          theme="default"
-          showLinks={true}
-          providers={[]}
-          redirectTo="http://localhost:3000/auth/callback/"
-        />
+    <div>
+      <form onSubmit={ handleSubmit }>
+      <div className='py-5'>
+            <label className="block mb-2 text-base font-bold text-zinc-700">Correo</label>
+            <input 
+              className="input" 
+              name="text" 
+              type="email" 
+              placeholder="Ingrese su correo" 
+              onChange={ e => setEmail(e.target.value) } />
+        </div>
+        <div>
+            <label className="block mb-2 text-base font-bold text-zinc-700">Contraseña</label>
+            <input 
+              className="input" 
+              name="text" 
+              type="password" 
+              placeholder="Ingrese su contraseña" 
+              onChange={ e => setPassword(e.target.value) }/>
+        </div>
+
+        <div className='text-sm text-zinc-500 hover:text-zinc-900 pt-3 pl-3'>
+          <a href='#'>Olvido su contraseña</a>
+        </div>
+
+        <div className="flex justify-center mt-6">
+          <button className="bg-primary-color text-white font-bold py-2 px-4 rounded">
+            Iniciar sesion
+          </button>
+        </div>
+      </form>
     </div>
   )
 }
