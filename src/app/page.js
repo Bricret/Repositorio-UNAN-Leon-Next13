@@ -5,10 +5,11 @@ import { Header } from "./components/headers/Header";
 import { Hero } from "./components/hero/Hero";
 
 
+
 export default function Home() {
+
   return (
     <>
-
       <Header />
 
       <Hero />

@@ -13,17 +13,13 @@ export default function AuthForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const result = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
-      console.log(result);
-    } catch (error) {
-      console.log(error)
-    }
-
-  };
+      
+      console.log (data, error);
+    };
 
   return (
     <div>
@@ -56,6 +52,9 @@ export default function AuthForm() {
             Iniciar sesion
           </button>
         </div>
+        
+        {/* {data && <p className="text-red-500 text-xs pt-2">{error}</p>} */}
+
       </form>
     </div>
   )
