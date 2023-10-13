@@ -3,9 +3,24 @@ import { items } from './navItems';
 import PropTypes from 'prop-types';
 import { Search } from '../hero/Search';
 import { ButtonLogin } from './ButtonLogin';
+import { useEffect, useState } from 'react';
+import { supabase } from '@/lib/client';
+import { UserAccount } from '../user/UserAccount';
 
 
 export const ItemsNav = ({ select = false }) => {
+
+    const [login, setLogin] = useState(false);
+
+    useEffect(() => {
+        supabase.auth.onAuthStateChange((event, session) => {
+          if (session){
+            setLogin(true)
+          } else {
+            setLogin(false)
+          }
+      })
+      }, [ ])
 
   return (
         <>
@@ -20,18 +35,13 @@ export const ItemsNav = ({ select = false }) => {
                         </li>
                     ))
                 }
-
-                <ButtonLogin />
-
-                <div>
-                    <form action="/auth/signout" method="post">
-                        <button className="button block" type="submit">
-                            Sign out
-                        </button>
-                    </form>
+                <div className={login ? 'hidden' : 'block'}>
+                    <ButtonLogin />
                 </div>
 
-                <Link href='/account' className='pl-3'> cuenta personal</Link>
+                <div className={`relative ${ login ? 'block' : 'hidden'  }`}>
+                    <UserAccount />
+                </div>
 
             </ul>
         </>

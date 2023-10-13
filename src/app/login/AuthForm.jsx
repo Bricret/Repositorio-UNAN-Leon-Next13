@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/client';
+import { useRouter } from 'next/navigation';
 
 
 export default function AuthForm() {
@@ -9,17 +10,28 @@ export default function AuthForm() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
-      
-      console.log (data, error);
+      if (error) {
+        alert("Error al iniciar sesion, verifique sus credenciales")
+        return
+      }
     };
+
+  useEffect(() => {
+    supabase.auth.onAuthStateChange((event, session) => {
+      console.log(event, session)
+      if (session){
+        router.push('/')
+      }
+  })
+  }, [ router ])
 
   return (
     <div>
@@ -48,13 +60,10 @@ export default function AuthForm() {
         </div>
 
         <div className="flex justify-center mt-6">
-          <button className="bg-primary-color text-white font-bold py-2 px-4 rounded">
+          <button className="bg-primary-color text-white font-bold py-2 px-4 rounded" type='submit'>
             Iniciar sesion
           </button>
         </div>
-        
-        {/* {data && <p className="text-red-500 text-xs pt-2">{error}</p>} */}
-
       </form>
     </div>
   )

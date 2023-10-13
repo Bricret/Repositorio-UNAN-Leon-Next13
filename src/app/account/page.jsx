@@ -1,8 +1,6 @@
 // page component for account page
 
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
-import AccountForm from './AccountForm'
 
 export default async function Account() {
   const cookieStore = cookies()
@@ -13,5 +11,9 @@ export default async function Account() {
   } = await supabase.auth.getSession()
   console.log(session);
 
-  return <AccountForm session={session} />
+  return (
+    <>
+      <h1>Account</h1>
+    </>
+  )
 }
