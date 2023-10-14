@@ -2,31 +2,18 @@
 
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/client';
-import { useRouter } from 'next/navigation';
+import { UseLogs } from '@/hooks/UseLogs';
+
 
 
 export default function AuthForm() {
 
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const router = useRouter()
+  const { handleSubmit, setEmail, setPassword, router } = UseLogs()
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-      const { data, error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-      if (error) {
-        alert("Error al iniciar sesion, verifique sus credenciales")
-        return
-      }
-    };
 
   useEffect(() => {
     supabase.auth.onAuthStateChange((event, session) => {
-      console.log(event, session)
       if (session){
         router.push('/')
       }
@@ -56,7 +43,7 @@ export default function AuthForm() {
         </div>
 
         <div className='text-sm text-zinc-500 hover:text-zinc-900 pt-3 pl-3'>
-          <a href='#'>Olvido su contraseña</a>
+          <a>Olvido su contraseña</a>
         </div>
 
         <div className="flex justify-center mt-6">
