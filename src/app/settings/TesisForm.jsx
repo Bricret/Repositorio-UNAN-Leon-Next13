@@ -1,6 +1,4 @@
 'use client';
-
-
 import { useGetTesis } from "@/hooks/useGetTesis";
 import { inputs } from "./inputs"
 import { useRouter } from "next/navigation";
@@ -16,6 +14,8 @@ export const TesisForm = () => {
         supabase.auth.onAuthStateChange((event, session) => {
           if (!session){
             router.push('/login');
+          } else {
+            router.push('/settings');
           }
       })
       }, [ router ])

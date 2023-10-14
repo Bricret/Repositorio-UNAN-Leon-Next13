@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { supabase } from "@/lib/client";
 
 export const useGetTesis = () => {
@@ -39,12 +39,14 @@ export const useGetTesis = () => {
                 break;
             default:
                 break;
-        }
-    }
+        };
+    };
 
     const handleSubmitTesis = async (e) => {
         e.preventDefault();
         try {
+            const  { data : { user } }  = await supabase.auth.getUser();
+            const userId = user.id;
             const result = await supabase.from('tesis').insert({
                 autor: autor,
                 titulo: titulo.toLocaleLowerCase().trim(),
@@ -52,10 +54,13 @@ export const useGetTesis = () => {
                 carrera: carrera,
                 palabras_clave: palabrasClave.toLocaleLowerCase().trim(),
                 tipos_de_tesis: tipo,
-                link: link
+                link: link,
+                users: userId
             });
             alert('Se ha ingresado la tesis correctamente');
+
         } catch (error) {
+            alert('Error al ingresar la tesis');
             console.log("Error al ingresar la tesis", error);
         }
     }

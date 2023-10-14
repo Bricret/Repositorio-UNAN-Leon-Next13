@@ -9,13 +9,10 @@ export const metadata = {
 export default function Layout({ children }) {
 
     return (
-        <>
+        <div className="flex flex-col h-screen w-screen bg-zinc-100">
             <Header />
-        <div className="flex flex-col min-h-screen justify-between">
             {children}
             <Footer2 />
         </div>
-        </>
-
     );
 }

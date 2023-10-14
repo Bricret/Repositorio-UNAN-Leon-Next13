@@ -6,6 +6,8 @@ import { TesisForm } from "./TesisForm";
 export default function setPage () {
 
     return (
-        <TesisForm />
+        <div className="flex flex-1 overflow-hidden">
+            <TesisForm />
+        </div>
     )
 }
