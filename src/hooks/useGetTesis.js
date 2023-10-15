@@ -98,6 +98,37 @@ export const useGetTesis = () => {
         }
     }
 
+    //actualizar tesis
+    const handleUpdateTesis = async (id) => {
+        try {
+            const user = await supabase.auth.getUser();
+            const { datas, error } = await supabase
+            .from('tesis')
+            .update({
+                autor: autor,
+                titulo: titulo.toLocaleLowerCase().trim(),
+                fecha: fecha,
+                carrera: carrera,
+                palabras_clave: palabrasClave.toLocaleLowerCase().trim(),
+                tipos_de_tesis: tipo,
+                link: link,
+                users: user.data.user.id
+            })
+            .eq('users', user.data.user.id)
+            .eq('id', id);
+            
+            if (error) {
+                console.log("Error al actualizar la tesis", error);
+            } else {
+                alert('Se ha actualizado la tesis correctamente');
+            }
+            
+        } catch (error) {
+            alert('Error al actualizar la tesis');
+            console.log("Error al actualizar la tesis", error);
+        }
+    }
+
     return {
         handleGetTesis,
         handleSubmitTesis,

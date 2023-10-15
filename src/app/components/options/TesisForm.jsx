@@ -21,9 +21,6 @@ export const TesisForm = () => {
 
   return (
     <>
-
- 
-
     <main className="flex-1 overflow-auto p-4">
         <div className="grid gap-4">
             <h1 className="mt-2 text-center font-bold text-xl font-roboto">Ingrese una nueva tesis</h1>

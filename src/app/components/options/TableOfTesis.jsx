@@ -2,6 +2,7 @@
 
 import { useGetTesis } from "@/hooks/useGetTesis";
 import { supabase } from "@/lib/client";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -55,9 +56,9 @@ export const TableOfTesis = () => {
                                 <td className="border border-slate-700 max-w-[20rem] overflow-auto whitespace-normal">{tesis.titulo}</td>
                                 <td className="border border-slate-700  max-w-[10rem] overflow-auto whitespace-normal">{tesis.link}</td>
                                 <td className="border border-slate-700 ">
-                                    <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
+                                    <Link href={`/settings/edit/${tesis.id}`} className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full">
                                         Editar
-                                    </button>
+                                    </Link>
                                     <button 
                                         className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full"
                                         onClick={() => handleDeleteTesis(tesis.id)}>
