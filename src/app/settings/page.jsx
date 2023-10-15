@@ -1,13 +1,9 @@
 'use state';
-
-import { TesisForm } from "./TesisForm";
-
+import { TesisForm } from "../components/options/TesisForm";
 
 export default function setPage () {
 
     return (
-        <div className="flex flex-1 overflow-hidden">
-            <TesisForm />
-        </div>
+        <TesisForm />
     )
 }

@@ -39,7 +39,8 @@ export default function AuthForm() {
               name="text" 
               type="password" 
               placeholder="Ingrese su contraseña" 
-              onChange={ e => setPassword(e.target.value) }/>
+              onChange={ e => setPassword(e.target.value) }
+              />
         </div>
 
         <div className='text-sm text-zinc-500 hover:text-zinc-900 pt-3 pl-3'>
