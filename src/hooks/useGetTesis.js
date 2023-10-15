@@ -133,7 +133,22 @@ export const useGetTesis = () => {
         handleGetTesis,
         handleSubmitTesis,
         handleDeleteTesis,
+        handleUpdateTesis,
         getAllTesis,
         tesis,
+        autor,
+        titulo,
+        fecha,
+        tipo,
+        carrera,
+        palabrasClave,
+        link,
+        setAutor,
+        setTitulo,
+        setFecha,
+        setTipo,
+        setCarrera,
+        setPalabrasClave,
+        setLink
     }
 }
