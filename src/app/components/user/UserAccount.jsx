@@ -3,7 +3,6 @@ import logo from "../../../../public/img/userLogo.webp"
 import { useState } from "react"
 import Link from "next/link"
 import { UseLogs } from "@/hooks/UseLogs"
-import { BiUserCircle } from "react-icons/bi"
 import { IoSettingsOutline } from "react-icons/io5"
 import { MdPowerSettingsNew } from "react-icons/md"
 
@@ -24,17 +23,6 @@ export const UserAccount = () => {
       <ul
         className={`absolute z-10 flex flex-col min-w-[150px] gap-2 overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none overflow-x-hidden -right-6 top-12 px-2 transition-opacity duration-300 ${clic ? 'block' : 'hidden '}`}
       >
-        {/* perfil de cada usuario */}
-        <Link
-          href="/account"
-          className="flex w-full cursor-pointer select-none items-center gap-2 rounded-md  pt-[9px] pb-2 text-start leading-tight outline-none transition-all hover: bg-blue-gray-50 hover: bg-opacity-80 hover:text-zinc-600 focus: bg-blue-gray-50 focus: text-blue-gray-900 active: bg-blue-gray-50 active:bg-opacity-80 active: text-blue-gray-900"
-        >
-          <BiUserCircle className="h-6 w-6" />
-          <p className="block font-sans text-sm font-normal leading-normal text-inherit antialiased">
-            Mi perfil
-          </p>
-        </Link>
-
         {/* ajustes para ingreso y eliminacion de tesis */}
         <Link
           href="/settings"

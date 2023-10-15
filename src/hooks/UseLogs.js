@@ -26,6 +26,7 @@ export const UseLogs = () => {
           email,
           password,
         });
+        router.push("/");
         if (error) {
           alert("Error al iniciar sesion, verifique sus credenciales")
           return

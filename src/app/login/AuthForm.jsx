@@ -1,24 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react';
-import { supabase } from '@/lib/client';
 import { UseLogs } from '@/hooks/UseLogs';
-
-
 
 export default function AuthForm() {
 
-
-  const { handleSubmit, setEmail, setPassword, router } = UseLogs()
-
-
-  useEffect(() => {
-    supabase.auth.onAuthStateChange((event, session) => {
-      if (session){
-        router.push('/')
-      }
-  })
-  }, [ router ])
+  const { handleSubmit, setEmail, setPassword } = UseLogs()
 
   return (
     <div>

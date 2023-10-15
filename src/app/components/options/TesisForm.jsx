@@ -15,8 +15,6 @@ export const TesisForm = () => {
         supabase.auth.onAuthStateChange((event, session) => {
           if (!session){
             router.push('/login');
-          } else {
-            router.push('/settings');
           }
       })
       }, [ router ])

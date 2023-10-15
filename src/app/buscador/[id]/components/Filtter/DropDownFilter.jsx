@@ -6,7 +6,7 @@ export const DropDownFilter = ({ onFilterSelect }) => {
 
 
   const handleFilterSelect = (filterType, filterValue) => {
-  onFilterSelect({ filterType, filterValue });
+    onFilterSelect({ filterType, filterValue });
   };
 
 

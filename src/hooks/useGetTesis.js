@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { supabase } from "@/lib/client";
 
 export const useGetTesis = () => {
@@ -12,7 +12,17 @@ export const useGetTesis = () => {
     const [carrera, setCarrera] = useState('');
     const [palabrasClave, setPalabrasClave] = useState('');
     const [link, setLink] = useState('');
+    const [tesis, setTesis] = useState([]);
 
+    //extraer todas las tesis
+    const getAllTesis = async () => {
+        const { data, error } = await supabase
+        .from('tesis')
+        .select('*')
+        setTesis(data);
+    }
+
+    //extraer tesis por titulo
     const handleGetTesis = (e) => {
         const { name, value } = e.target;
         switch (name) {
@@ -42,6 +52,7 @@ export const useGetTesis = () => {
         };
     };
 
+    //ingresar tesis
     const handleSubmitTesis = async (e) => {
         e.preventDefault();
         try {
@@ -65,8 +76,33 @@ export const useGetTesis = () => {
         }
     }
 
+    //eliminar tesis
+    const handleDeleteTesis = async (id) => {
+        try {
+            const user = await supabase.auth.getUser();
+            const { datas, error } = await supabase
+            .from('tesis')
+            .delete()
+            .eq('users', user.data.user.id)
+            .eq('id', id);
+            
+            if (error) {
+                console.log("Error al eliminar la tesis", error);
+            } else {
+                alert('Se ha eliminado la tesis correctamente');
+            }
+            
+        } catch (error) {
+            alert('Error al eliminar la tesis');
+            console.log("Error al eliminar la tesis", error);
+        }
+    }
+
     return {
         handleGetTesis,
-        handleSubmitTesis
+        handleSubmitTesis,
+        handleDeleteTesis,
+        getAllTesis,
+        tesis,
     }
 }
