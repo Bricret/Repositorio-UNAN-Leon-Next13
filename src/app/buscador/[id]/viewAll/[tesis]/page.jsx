@@ -43,14 +43,13 @@ export default async function viewPage ({ params }) {
             ))}
             </div> 
             </div>
-            {/* Quiero vizualizar un pdf en pantalla usando una url a dicho pdf */}
-            {/* <iframe 
+            <iframe 
              src={ data[0]?.link }
                 width="100%"
                 height="100%"
                 allowFullScreen
                 title="pdf"
-            /> */}
+            />
         </main>
         
     )

@@ -11,7 +11,7 @@ export const Card = ({ image, description, title, link }) => {
                     <Image 
                     className="rounded-t-lg w-full" 
                     src={ image } 
-                    alt="Logo-Unanleon"
+                    alt={ title }
                     />
                     <span className='p-5 w-full '>
                         <h5 className="mb-2 py-2 text-2xl font-bold tracking-tight text-zinc-600 ">{ title }</h5>

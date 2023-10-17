@@ -6,6 +6,7 @@ import Link from "next/link";
 import { DropDownFilter } from "../Filtter/DropDownFilter";
 import { Paginator } from "./Paginator";
 import { useGetData } from "@/hooks/useGetData";
+import { Button } from "@material-tailwind/react";
 
 export function InfoCards ({ title }) {
 
@@ -21,7 +22,7 @@ export function InfoCards ({ title }) {
 
           {data.map(( tesi ) => (
             <div
-              className="h-64 rounded-lg bg-zinc-200 dark:bg-zinc-800 flex flex-row items-center"
+              className="h-64 rounded-lg bg-zinc-200 bg-gray-800 flex flex-row items-center"
               key={tesi.id}
             >
               <Image
@@ -29,29 +30,26 @@ export function InfoCards ({ title }) {
                 alt="logo"
                 className="rounded-lg h-36 w-36 mx-4"
               />
-              <div className="flex flex-col gap-3 dark:text-zinc-300 font-roboto w-4/5">
+              <div className="flex flex-col gap-3 text-gray-300 font-roboto w-4/5">
                 <p>
-                  <span className="text-xl dark:text-third-color ">Titulo: </span>
+                  <span className="text-xl text-third-color ">Titulo: </span>
                   {tesi.titulo}
                 </p>
                 <p>
-                  <span className="text-xl dark:text-third-color">Autor: </span>
+                  <span className="text-xl text-third-color">Autor: </span>
                   {tesi.autor}
                 </p>
                 <p>
-                  <span className="text-xl dark:text-third-color">Fecha: </span>
+                  <span className="text-xl text-third-color">Fecha: </span>
                   {tesi.fecha}
                 </p>
                 <p>
-                  <span className="text-xl dark:text-third-color">Peso: </span>
+                  <span className="text-xl text-third-color">Peso: </span>
                   {tesi.peso}
                 </p>
 
-                <Link
-                  href={`/buscador/${title}/viewAll/${tesi.id}`}
-                  className="middle none center mr-4 rounded-lg bg-red-500 py-3 px-6 font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none w-28 mt-3"
-                >
-                  ver mas...
+                <Link href={`/buscador/${title}/viewAll/${tesi.id}`}>
+                  <Button variant="gradient" color="red"  >Ver mas...</Button>
                 </Link>
               </div>
             </div>

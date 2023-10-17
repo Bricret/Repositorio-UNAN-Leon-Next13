@@ -11,9 +11,9 @@ export const DropDownFilter = ({ onFilterSelect }) => {
 
 
   return (
-<main className="w-64 border-r border-zinc-500 dark:border-zinc-700 overflow-auto">
+<main className="md:w-60 w-40 border-r border-gray-700 overflow-auto">
   <nav className="flex flex-col gap-6 ">
-    <h2 className="text-lg font-semibold text-zinc-500 text-center dark:text-zinc-500 pt-4">
+    <h2 className="text-lg font-semibold text-center text-gray-500 pt-4">
       Escoja un filtro
     </h2>
     <div className="space-y-6">
@@ -33,7 +33,7 @@ export const DropDownFilter = ({ onFilterSelect }) => {
               </div>
             ))}
           </div>
-          <div className="block border-b border-zinc-500"></div>
+          <div className="block border-b border-gray-500"></div>
         </div>
       ))}
     </div>

@@ -15,27 +15,28 @@ export const UseLogs = () => {
         const { error } = await supabase.auth.signOut()
         if (error) {
           alert(error.message);
-          return router.push("/");
         }
     };
 
     //funcion para iniciar sesion
-    const handleSubmit = async (e) => {
+    const onSignIn = async (e) => {
       e.preventDefault();
         const { data, error } = await supabase.auth.signInWithPassword({
           email,
           password,
         });
-        router.push("/");
+
         if (error) {
-          alert("Error al iniciar sesion, verifique sus credenciales")
-          return
+          alert("Error al iniciar sesion, verifique sus credenciales");
+          router.push("/login");
+        } else {
+          router.push("/");
         }
       };
 
   return {
     onLogout,
-    handleSubmit,
+    onSignIn,
     setEmail,
     setPassword,
     router,

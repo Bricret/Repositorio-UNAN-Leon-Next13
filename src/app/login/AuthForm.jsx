@@ -4,11 +4,11 @@ import { UseLogs } from '@/hooks/UseLogs';
 
 export default function AuthForm() {
 
-  const { handleSubmit, setEmail, setPassword } = UseLogs()
+  const { onSignIn, setEmail, setPassword } = UseLogs()
 
   return (
     <div>
-      <form onSubmit={ handleSubmit }>
+      <form onSubmit={ onSignIn }>
       <div className='py-5'>
             <label className="block mb-2 text-base font-bold text-zinc-700">Correo</label>
             <input 
