@@ -1,4 +1,4 @@
-const lookA = 'px-2 md:text-lg text-sm md:opacity-40 md:hover:text-[#000000] md:hover:opacity-70';
+const lookA = 'px-2 md:text-base text-lg lg:text-base md:opacity-40 md:hover:text-[#000000] md:hover:opacity-70';
 const lookLi = 'mx-6 md:my-4 my-6 py-1 md:my-0 duration-500 hover:bg-[#C0C0C0] rounded-lg md:flex md:items-center';
 
 export const items = [

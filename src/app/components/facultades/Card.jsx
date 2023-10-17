@@ -14,6 +14,10 @@ export const CardInfo = ({ image, description, title, link }) => {
         <Image
           src={image}
           alt={title}
+          fill
+          sizes='h-56 w-full'
+          className="rounded-t-lg object-cover "
+          
         />
       </CardHeader>
       <CardBody>

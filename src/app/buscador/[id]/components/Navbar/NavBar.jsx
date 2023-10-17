@@ -33,7 +33,7 @@ export const NavBar = ({ searchWord }) => {
                     <ButtonLogin />
                 </div>
 
-                <div className={`relative ${ login ? 'block' : 'hidden'  }`}>
+                <div className={`relative ${ login ? 'block ' : 'hidden'  }`}>
                     <UserAccount />
                 </div>
 

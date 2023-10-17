@@ -17,7 +17,7 @@ export default function AuthForm() {
               type="email" 
               placeholder="Ingrese su correo" 
               onChange={ e => setEmail(e.target.value) } />
-        </div>
+      </div>
         <div>
             <label className="block mb-2 text-base font-bold text-zinc-700">Contraseña</label>
             <input 
