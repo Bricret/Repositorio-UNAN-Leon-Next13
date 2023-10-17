@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { Card, CardHeader, CardBody, CardFooter, Typography, Button } from "@material-tailwind/react";
-import { BsFacebook } from "react-icons/bs";
+import Link from 'next/link';
 
 export const CardInfo = ({ image, description, title, link }) => {
 
@@ -25,7 +25,12 @@ export const CardInfo = ({ image, description, title, link }) => {
         </Typography>
       </CardBody>
       <CardFooter className="pt-0">
-        <Button> Ver mas... </Button>
+        <Link 
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer">
+          <Button> Ver mas... </Button>
+        </Link>
       </CardFooter>
     </Card>
         </>
