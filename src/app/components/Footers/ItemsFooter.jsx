@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 export const ItemsFooter = ({ title, style, link1, seccion1, link2, seccion2, link3, seccion3 }) => {
   return (
-    <section className=" md:text-start text-center">
+    <article className=" md:text-start text-center">
     <h2 className=" pb-6 font-bold text-2xl cursor-default">{ title }</h2>
     <ul className="text-white">
         <li className={ style } >
@@ -15,7 +15,7 @@ export const ItemsFooter = ({ title, style, link1, seccion1, link2, seccion2, li
             <a href={ link3 }>{ seccion3 }</a>
         </li>
     </ul>  
-</section> 
+</article> 
   )
 }
 

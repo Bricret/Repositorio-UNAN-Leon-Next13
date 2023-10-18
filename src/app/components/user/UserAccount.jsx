@@ -6,7 +6,7 @@ import { UseLogs } from "@/hooks/UseLogs"
 import { IoSettingsOutline } from "react-icons/io5"
 import { MdPowerSettingsNew } from "react-icons/md"
 
-export const UserAccount = () => {
+export const UserAccount = ({size = '-right-6'}) => {
 
   const [clic, setClic] = useState(false)
 
@@ -21,7 +21,7 @@ export const UserAccount = () => {
         onClick={() => setClic(prevClic => !prevClic)}
       />
       <ul
-        className={`absolute z-10 flex flex-col min-w-[150px] gap-2 overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none overflow-x-hidden right-32 md:-right-6 top-12 px-2 transition-opacity duration-300 ${clic ? 'block' : 'hidden '}`}
+        className={`absolute z-10 flex flex-col min-w-[150px] gap-2 overflow-auto rounded-md border border-blue-gray-50 bg-white p-3 font-sans text-sm font-normal text-blue-gray-500 shadow-lg shadow-blue-gray-500/10 focus:outline-none overflow-x-hidden ${size} md:-right-6 top-12 px-2 transition-opacity duration-300 ${clic ? 'block' : 'hidden '}`}
       >
         {/* ajustes para ingreso y eliminacion de tesis */}
         <Link

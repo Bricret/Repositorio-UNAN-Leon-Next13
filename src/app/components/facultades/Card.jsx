@@ -8,8 +8,8 @@ export const CardInfo = ({ image, description, title, link }) => {
 
 
   return (
-        <>
-    <Card className="mt-6 w-96">
+  <article>
+    <Card className="mt-6 w-96 hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">
       <CardHeader color="blue-gray" className="relative h-56">
         <Image
           src={image}
@@ -36,9 +36,9 @@ export const CardInfo = ({ image, description, title, link }) => {
           <Button> Ver mas... </Button>
         </Link>
       </CardFooter>
-    </Card>
-        </>
-    )
+      </Card>
+  </article>
+)
 
 
 

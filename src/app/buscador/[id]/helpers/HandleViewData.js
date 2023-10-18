@@ -3,7 +3,7 @@ import { supabase } from "@/lib/client";
 export async function HandleViewData (val, start, end, filter) {
 
     let query = supabase
-        .from('tesis_view')
+        .from('tesis_view2')
         .select('*')
         .range(start, end)
         .ilike('titulo_palabras_clave', `%${val}%`);

@@ -1,15 +1,17 @@
 import { LogoType } from '../logo/LogoType'
 import { Footer1 } from './Footer1'
+import { Footer2 } from './Footer2'
 
 export const Footers = () => {
   return (
     <>
-        <div className=" bg-secondary-color">
+        <footer className=" bg-secondary-color">
             <div className='py-3 md:px-10 px-7'>
             <LogoType type={ false }/>
             </div>
             <Footer1 />
-        </div>
+            <Footer2 />
+        </footer>
 
     </>
         

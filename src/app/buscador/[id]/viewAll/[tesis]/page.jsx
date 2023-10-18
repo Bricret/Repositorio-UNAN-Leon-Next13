@@ -1,5 +1,5 @@
 import { Image } from "next/dist/client/image-component";
-import logo from "../../../../../../public/img/CT.webp";
+import logo from "../../../../../../public/img/edificioUNAN.webp";
 import { BsDownload } from "react-icons/bs";
 import { HandleViewById } from "../../helpers/HandleViewById";
 

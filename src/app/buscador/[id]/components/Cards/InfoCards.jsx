@@ -17,20 +17,18 @@ export function InfoCards ({ title }) {
       {/* funcion para los filtros*/}
       <DropDownFilter onFilterSelect={(filter) => handleFilterSelect(filter)} />
 
-      <main className="flex-1 overflow-auto p-4">
-        <div className="grid gap-4">
-
+      <section className="flex-1 overflow-auto p-4 grid gap-4">
           {data.map(( tesi ) => (
-            <div
-              className="h-64 rounded-lg bg-zinc-200 bg-gray-800 flex flex-row items-center"
+            <article
+              className="rounded-lg bg-gray-800 flex flex-row items-center py-4 px-2 shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-100"
               key={tesi.id}
             >
               <Image
                 src={logoBook}
                 alt="logo"
-                className="rounded-lg h-36 w-36 mx-4"
+                className="rounded-lg h-36 w-40 mx-4 object-cover hidden md:block"
               />
-              <div className="flex flex-col gap-3 text-gray-300 font-roboto w-4/5">
+              <div className="flex flex-col gap-3 text-gray-300 font-roboto">
                 <p>
                   <span className="text-xl text-third-color ">Titulo: </span>
                   {tesi.titulo}
@@ -52,11 +50,10 @@ export function InfoCards ({ title }) {
                   <Button variant="gradient" color="red"  >Ver mas...</Button>
                 </Link>
               </div>
-            </div>
+            </article>
           ))}
-        </div>
         <Paginator  setPage={ setPage } page={ page } data={ data } allPage={ itemsPerPage } />
-      </main>
+      </section>
 
     </>
   );

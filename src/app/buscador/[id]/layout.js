@@ -8,13 +8,13 @@ export default function Layout({ children, params }) {
     const searchWord = decodedId.replace(/-/g, ' ');
 
     return (
-        <div className="flex flex-col h-screen w-screen bg-gray-900">
+        <main className="flex flex-col h-screen w-screen bg-gray-900">
             <NavBar searchWord={ searchWord }/>
 
             {children}
 
             <Footer />
-        </div>
+        </main>
 
     );
 }

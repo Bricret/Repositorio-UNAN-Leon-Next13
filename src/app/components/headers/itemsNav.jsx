@@ -35,7 +35,7 @@ export const ItemsNav = ({ select = false }) => {
         </div>
 
         <div className={`relative ${ login ? 'block' : 'hidden'  }`}>
-            <UserAccount />
+            <UserAccount size={'right-32'}/>
         </div>
 
     </ul>

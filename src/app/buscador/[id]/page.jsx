@@ -10,8 +10,8 @@ export default function dashPage ({params}) {
     const searchWord = decodedId.replace(/-/g, ' ');
 
     return (
-        <div className="flex flex-1 overflow-hidden">
+        <main className="flex flex-1 overflow-hidden">
             <InfoCards  title={searchWord} /> 
-        </div>
+        </main>
     )
 }

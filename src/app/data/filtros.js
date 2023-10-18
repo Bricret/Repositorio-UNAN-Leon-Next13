@@ -14,7 +14,7 @@ const filtros = [
     },
     {
         id: '2',
-        title: 'Tipo de Tesis',
+        title: 'Tipos_de_Tesis',
         tipos: [
             'licenciatura',
             'maestria',
