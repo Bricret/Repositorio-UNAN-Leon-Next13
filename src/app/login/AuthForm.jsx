@@ -10,23 +10,25 @@ export default function AuthForm() {
     <div>
       <form onSubmit={ onSignIn }>
       <div className='py-5'>
-            <label className="block mb-2 text-base font-bold text-zinc-700">Correo</label>
-            <input 
-              className="input" 
-              name="text" 
-              type="email" 
-              placeholder="Ingrese su correo" 
-              onChange={ e => setEmail(e.target.value) } />
+            <label className="block mb-2 text-base font-bold text-zinc-700">Correo
+              <input 
+                className="input" 
+                name="text" 
+                type="email" 
+                placeholder="Ingrese su correo" 
+                onChange={ e => setEmail(e.target.value) } />
+            </label>
       </div>
         <div>
-            <label className="block mb-2 text-base font-bold text-zinc-700">Contraseña</label>
-            <input 
-              className="input" 
-              name="text" 
-              type="password" 
-              placeholder="Ingrese su contraseña" 
-              onChange={ e => setPassword(e.target.value) }
-              />
+            <label className="block mb-2 text-base font-bold text-zinc-700">Contraseña
+              <input 
+                className="input" 
+                name="text" 
+                type="password" 
+                placeholder="Ingrese su contraseña" 
+                onChange={ e => setPassword(e.target.value) }
+                />
+              </label>
         </div>
 
         <div className='text-sm text-zinc-500 hover:text-zinc-900 pt-3 pl-3'>

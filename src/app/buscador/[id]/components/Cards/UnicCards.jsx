@@ -13,7 +13,7 @@ export const UnicCards = ({ title, data, page, setPage, itemsPerPage }) => {
     <section className="flex-1 overflow-x-auto p-4 grid gap-4">
       {data.map(( tesi ) => (
         <article
-          className="rounded-lg w-[50rem] md:w-full bg-gray-800 flex flex-row items-center py-4 px-2 shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-100"
+          className="rounded-lg w-full bg-gray-800 flex flex-row items-center py-4 px-2 shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-100"
           key={tesi.id}
         >
           <Image

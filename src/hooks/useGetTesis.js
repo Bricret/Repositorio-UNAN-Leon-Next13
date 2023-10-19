@@ -69,7 +69,6 @@ export const useGetTesis = () => {
                 link: link,
                 users: userId
             });
-            alert('Se ha ingresado la tesis correctamente');
 
         } catch (error) {
             alert('Error al ingresar la tesis');
@@ -86,12 +85,6 @@ export const useGetTesis = () => {
             .delete()
             .eq('users', user.data.user.id)
             .eq('id', id);
-            
-            if (error) {
-                console.log("Error al eliminar la tesis", error);
-            } else {
-                alert('Se ha eliminado la tesis correctamente');
-            }
             
         } catch (error) {
             alert('Error al eliminar la tesis');
@@ -117,12 +110,6 @@ export const useGetTesis = () => {
             })
             .eq('users', user.data.user.id)
             .eq('id', id);
-            
-            if (error) {
-                console.log("Error al actualizar la tesis", error);
-            } else {
-                alert('Se ha actualizado la tesis correctamente');
-            }
             
         } catch (error) {
             alert('Error al actualizar la tesis');

@@ -1,5 +1,6 @@
 'use client'
 
+import { AlertForTesis } from "@/app/components/options/AlertForTesis";
 import { inputs } from "@/app/data/inputs"
 import { useGetTesis } from "@/hooks/useGetTesis";
 import { supabase } from "@/lib/client";
@@ -8,9 +9,11 @@ import { useEffect } from "react";
 
 export const UpdateForm = ({ Id }) => {
 
+    // Obtener los estados y setters de los inputs del formulario
     const { autor, setAutor, titulo, setTitulo, fecha, setFecha, tipo, setTipo, carrera, setCarrera, palabrasClave, setPalabrasClave, link, setLink, handleUpdateTesis } = useGetTesis();
 
     useEffect(() => {
+        // Obtener los datos de la tesis a actualizar
         const onViewTesis = async (val) => {
             let { data, error } = await supabase
             .from('tesis')
@@ -38,6 +41,7 @@ export const UpdateForm = ({ Id }) => {
         'Link de la Tesis': link,
     };
 
+    // Crear un objeto que mapee los nombres de los inputs a sus setters correspondientes
     const inputSetters = {
         'Autor': setAutor,
         'Título': setTitulo,
@@ -48,6 +52,7 @@ export const UpdateForm = ({ Id }) => {
         'Link de la Tesis': setLink,
     };
 
+    // Manejador de cambio para todos los inputs del formulario
     const handleChange = (e) => {
         const { name, value } = e.target;
         const setter = inputSetters[name];
@@ -56,6 +61,7 @@ export const UpdateForm = ({ Id }) => {
         }
     };
 
+    // Manejador de envío del formulario
     const handleSubmit = (e) => {
         e.preventDefault();
         handleUpdateTesis(Id);
@@ -63,8 +69,8 @@ export const UpdateForm = ({ Id }) => {
 
     return (
         <main className="flex-1 overflow-auto p-4">
-            <div className="grid gap-4">
-                <h1 className="mt-2 text-center font-bold text-xl font-roboto">Actualicé la tesis seleccionada</h1>
+            <div className="grid gap-4 ">
+            <h1 class="text-center md:text-3xl text-xl font-extrabold font-poppins text-[#2E2D29CC] cursor-default">Actualice la Tesis aqui</h1>
                 <form className="space-y-6" onSubmit={ handleSubmit }>
                     {
                         inputs.map((input) => (
@@ -81,11 +87,7 @@ export const UpdateForm = ({ Id }) => {
                             </div>
                         ))
                     }
-                    <button 
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" 
-                        type="submit">
-                        Actualizar
-                    </button>
+                    <AlertForTesis type={'Actualizar'} text={'La tesis se ha Actualizado correctamente en la base de datos!'} title={'Tesis Actualizada'} color={'blue'}/>
                 </form>
             </div>
         </main>

@@ -9,7 +9,7 @@ export default function Layout({ children, params }) {
 
     return (
         <main className="flex flex-col h-screen w-screen bg-gray-900">
-            <NavBar searchWord={ searchWord }/>
+            <NavBar />
 
             {children}
 

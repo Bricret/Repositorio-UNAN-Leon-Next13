@@ -4,6 +4,7 @@ import { inputs } from "../../data/inputs"
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { supabase } from "@/lib/client";
+import { AlertForTesis } from "./AlertForTesis";
 
 
 export const TesisForm = () => {
@@ -22,8 +23,8 @@ export const TesisForm = () => {
   return (
     <>
     <main className="flex-1 overflow-auto p-4">
-        <div className="grid gap-4">
-            <h1 className="mt-2 text-center font-bold text-xl font-roboto">Ingrese una nueva tesis</h1>
+        <article className="grid gap-4">
+        <h1 class="text-center md:text-3xl text-xl font-extrabold font-poppins text-[#2E2D29CC] cursor-default">Ingrese una nueva tesis</h1>
             <form className="space-y-4" onSubmit={ handleSubmitTesis }>
                 {
                     inputs.map((input) => (
@@ -39,11 +40,9 @@ export const TesisForm = () => {
                         </div>
                     ))
                 }
-                <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" type="submit">
-                    Guardar
-                </button>
+                <AlertForTesis type={'Guardar'} text={'La tesis se ha ingresado correctamente en la base de datos!'} title={'Tesis Guardada'} />
             </form>
-        </div>
+        </article>
     </main>
     </>
     )

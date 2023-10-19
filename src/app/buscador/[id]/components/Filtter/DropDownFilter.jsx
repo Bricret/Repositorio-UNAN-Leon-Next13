@@ -11,7 +11,7 @@ export const DropDownFilter = ({ onFilterSelect }) => {
 
 
   return (
-    <nav className="md:w-60 w-40 border-r border-gray-700 overflow-auto flex flex-col gap-6">
+    <nav className="md:w-60 w-40 border-r border-gray-700 overflow-auto hidden md:flex md:flex-col gap-6">
         <h1 className="text-lg font-semibold text-center text-primary-color pt-4">
           Escoja un filtro
         </h1>
