@@ -7,7 +7,7 @@ import { useEffect, useState } from "react"
 import { supabase } from '@/lib/client';
 
 
-export const NavBar = ({ searchWord }) => {
+export const NavBar = () => {
 
     const [login, setLogin] = useState(false);
 
@@ -36,7 +36,7 @@ export const NavBar = ({ searchWord }) => {
           <div className={login ? 'hidden' : 'block  md:bg-red-400 md:hover:bg-red-600 bg-transparent  text-white font-bold py-4  px-4 lg:mr-0 mr-4 md:rounded-full transition-all duration-500 ease-in'}>
             <ButtonLogin />
           </div>
-          <div className={`relative ${ login ? 'block ' : 'hidden'  }`}>
+          <div className={`relative ${ login ? 'block' : 'hidden'  }`}>
               <UserAccount />
           </div>
   </nav>

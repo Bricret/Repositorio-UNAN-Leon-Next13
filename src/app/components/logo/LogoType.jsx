@@ -11,7 +11,7 @@ export const LogoType = (Props) => {
  
   return (
     <>
-        <figure className='flex items-center cursor-pointer'>
+        <figure className='flex items-center cursor-pointer md:w-auto w-2/3'>
           <Image 
             src={logo} 
             alt="Logo-Unanleon"

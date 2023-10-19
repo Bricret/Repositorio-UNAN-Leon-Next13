@@ -23,7 +23,7 @@ export const Header = () => {
     <>
       <header>
         <Nav1 />
-        <nav className='bg-white lg:flex flex-wrap md:flex-nowrap  py-1 lg:px-10 px-8 flex justify-between lg:w-full border-b-2 border-b-zinc-300'>
+        <nav className='bg-white flex-wrap md:flex-nowrap  py-1 lg:px-10 md:px-8 px-0 flex justify-between lg:w-full border-b-2 border-b-gray-300'>
            <LogoType type={ true }/>
 
            <BurgerMenu onPick={ onPick } first={ first }/>

@@ -17,7 +17,7 @@ export const UserAccount = ({size = '-right-6'}) => {
         <Image
         alt="logo user"
         src={logo}
-        className="relative inline-block h-12 w-12 cursor-pointer rounded-full object-cover object-center"
+        className="relative inline-block h-12 w-12 cursor-pointer rounded-full object-cover object-center lg:mr-0 mx-6"
         onClick={() => setClic(prevClic => !prevClic)}
       />
       <ul
