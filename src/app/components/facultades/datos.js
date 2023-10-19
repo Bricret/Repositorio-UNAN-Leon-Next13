@@ -1,6 +1,6 @@
 import Sistemas from "../../../../public/img/ing-Sistemas.webp";
 import Telematica from "../../../../public/img/ing-Telematica.webp";
-import Biologia from "../../../../public/img/Biologia.webp";
+import Biologia from "../../../../public/img/biologia.webp";
 import matematica from "../../../../public/img/matematica.webp";
 import Estadistica from "../../../../public/img/ing-Estadistica.webp";
 import quimica from "../../../../public/img/quimica.webp";

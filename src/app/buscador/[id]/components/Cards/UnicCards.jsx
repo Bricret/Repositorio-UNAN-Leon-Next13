@@ -7,9 +7,7 @@ import { Paginator } from "./Paginator";
 import { Button } from "@material-tailwind/react";import { useGetData } from "@/hooks/useGetData";
 
 
-export const UnicCards = ({ title }) => {
-
-    const {  data, page, setPage, itemsPerPage } = useGetData(title);
+export const UnicCards = ({ title, data, page, setPage, itemsPerPage }) => {
 
   return (
     <section className="flex-1 overflow-x-auto p-4 grid gap-4">

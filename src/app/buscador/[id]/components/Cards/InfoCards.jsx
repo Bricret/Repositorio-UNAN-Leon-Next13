@@ -7,9 +7,10 @@ import { UnicCards } from "./UnicCards";
 import { TesisNotFound } from "@/app/components/options/TesisNotFound";
 
 export function InfoCards ({ title }) {
-
-  const { data, handleFilterSelect, loading } = useGetData(title);
-
+  
+  // custom hook para obtener los datos de la api y la paginacion.
+  const { data, handleFilterSelect, loading, page, setPage, itemsPerPage } = useGetData(title); 
+  
   return (
     <>
       {/* funcion para los filtros*/}
@@ -20,7 +21,7 @@ export function InfoCards ({ title }) {
             <Loading />
           ) : (
             data && data.length > 0 ? (
-              <UnicCards title={title}  />
+              <UnicCards title={title} data={ data } page={page} setPage={setPage} itemsPerPage={itemsPerPage}/>
             ) : (
               <TesisNotFound />
             )
