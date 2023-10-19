@@ -7,6 +7,7 @@ export const useGetData = ( title ) => {
 
     const [page, setPage] = useState(0);
     const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
     const itemsPerPage = 5;
     
     const handleFilterSelect = (filter) => {
@@ -15,6 +16,7 @@ export const useGetData = ( title ) => {
     
       HandleViewData(title, start, end, filter) //funcion que trae los datos de la api y los filtra por titulo y carrera.
         .then(({ data }) => {
+          setLoading(false);
           setData(data);
         });
     };
@@ -25,6 +27,7 @@ export const useGetData = ( title ) => {
   
       HandleViewData(title, start, end)
         .then(({ data }) => {
+          setLoading(false);
           setData(data);
         });
   
@@ -36,5 +39,6 @@ export const useGetData = ( title ) => {
     setPage,
     handleFilterSelect,
     itemsPerPage,
+    loading,
   }
 }
