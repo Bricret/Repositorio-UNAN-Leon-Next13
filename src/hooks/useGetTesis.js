@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { supabase } from "@/lib/client";
 
+// custom hook para el CRUD de las tesis en la base de datos.
 export const useGetTesis = () => {
 
     const [autor, setAutor] = useState('');
