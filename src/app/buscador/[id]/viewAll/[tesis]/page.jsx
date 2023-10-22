@@ -43,7 +43,7 @@ export default async function viewPage ({ params }) {
             </article> 
             </section>
             <iframe 
-                src={ data[0]?.link }
+                src={ data[0].link }
                 width="100%"
                 height="100%"
                 allowFullScreen
