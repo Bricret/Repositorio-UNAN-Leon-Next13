@@ -1,6 +1,7 @@
 'use client'
 
 import { UseLogs } from '@/hooks/UseLogs';
+import Link from 'next/link';
 
 export default function AuthForm() {
 
@@ -38,6 +39,9 @@ export default function AuthForm() {
         <button className="bg-primary-color text-white font-bold py-2 px-4 rounded" type='submit'>
           Iniciar sesion
         </button>
+        <Link href='/' className="bg-primary-color text-white font-bold py-2 px-4 rounded ml-3">
+          Regresar
+        </Link>
       </div>
     </form>
   )
