@@ -26,11 +26,11 @@ export const TableOfTesis = () => {
 
   return (
     <>
-        <section className="container w-full mx-auto overflow-auto">
-            <article className="p-4 mt-2 lg:mt-0 rounded shadow bg-white">
-                <TableTesis tesis={ tesis } handleDeleteTesis={ handleDeleteTesis } />
-            </article>
-        </section>
+    <section className="container w-full mx-auto overflow-y-auto">
+        <article className="p-4 mt-2 lg:mt-0 rounded shadow bg-white overflow-y-auto">
+            <TableTesis tesis={ tesis } handleDeleteTesis={ handleDeleteTesis } />
+        </article>
+    </section>
     </>
 )
 }

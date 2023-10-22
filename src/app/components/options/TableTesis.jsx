@@ -1,9 +1,11 @@
+'use client';
+
 import { AlertForTesis } from "./AlertForTesis";
 import Link from "next/link";
 
 export const TableTesis = ({ tesis, handleDeleteTesis }) => {
   return (
-    <table className={`stripe hover w-full py-4 max-w-max text-sm border-separate shadow-lg rounded-lg my-2 ${tesis.length === 0 && 'hidden'}`}>
+    <table className={`stripe hover w-full py-4 max-w-max text-sm border-separate shadow-lg rounded-lg my-2 ${tesis.length === 0 && 'hidden'} overflow-y-auto`}>
         <thead className="bg-secondary-color opacity-80 text-white text-center">
             <tr>
                 <th className="border border-slate-500 ">id</th>
@@ -32,17 +34,17 @@ export const TableTesis = ({ tesis, handleDeleteTesis }) => {
                 <td className="border border-slate-700  max-w-[10rem] overflow-auto whitespace-normal">{tesis.link}</td>
                 <td className="border border-slate-700 max-w-[20rem]">
                     <div className="flex flex-col items-center">
-                        <Link href={`/settings/edit/${tesis.id}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-8 mb-4 rounded-md">
+                        <Link href={`/opciones/edit/${tesis.id}`} className="bg-blue-500  text-white font-bold py-2 px-8 mb-4 rounded-md">
                             Editar
                         </Link>
                         <div onClick={() => handleDeleteTesis(tesis.id)}>
-                            <AlertForTesis type={'Eliminar'} text={'La tesis se ha eliminado correctamente en la base de datos!'} title={'Tesis Eliminada'} color={'red'}/>
+                            <AlertForTesis accion={'Eliminar'} text={'La tesis se ha eliminado correctamente en la base de datos!'} title={'Tesis Eliminada'} color={'bg-red-500'}/>
                         </div>
                     </div>
                 </td>
             </tr>
         ))}
-    </tbody>
+        </tbody>
     </table>
   )
 }

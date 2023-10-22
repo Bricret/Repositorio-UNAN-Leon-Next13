@@ -6,7 +6,7 @@ import { Loading } from "@/app/components/options/Loading";
 import { UnicCards } from "./UnicCards";
 import { TesisNotFound } from "@/app/components/options/TesisNotFound";
 
-export function InfoCards ({ title }) {
+export function InfoCards({ title }) {
   
   // custom hook para obtener los datos de la api y la paginacion.
   const { data, handleFilterSelect, loading, page, setPage, itemsPerPage } = useGetData(title); 

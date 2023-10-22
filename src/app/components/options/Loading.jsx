@@ -1,9 +1,9 @@
-import { Spinner } from "@material-tailwind/react";
 
+// crear spinner de carga para cuando se esté cargando la página
 export const Loading = () => {
   return (
         <div className="flex justify-center items-center h-full mx-auto">
-            <Spinner className="h-16 w-16 text-gray-300/50" />
+            <h1>me voy a morir</h1>
         </div>
     )
 }

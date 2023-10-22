@@ -41,7 +41,7 @@ export const Search = ({type}) => {
                 <AiOutlineSearch />
             </div>
 
-            <button type="submit" className=" bg-primary-color rounded-md text-slate-50 text-white text-xs md:text-base w-32 md:w-2/12 h-8 md:h-14">Buscar</button>
+            <button type="submit" className=" bg-primary-color rounded-md text-slate-50 text-xs md:text-base w-32 md:w-2/12 h-8 md:h-14">Buscar</button>
         </form>
         {error && <p className={`text-red-500 pt-2 pl-8`} >El texto de búsqueda debe tener más de un carácter.</p>}
     </>

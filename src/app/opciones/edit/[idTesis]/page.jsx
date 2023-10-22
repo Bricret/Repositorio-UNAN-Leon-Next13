@@ -4,9 +4,9 @@ import { UpdateForm } from "./UpdateForm"
 export default function updatePage ({params}) {
 
     const { idTesis } = params;
-    const decodedId = decodeURIComponent(idTesis);
+    const decodedIdTesis = decodeURIComponent(idTesis);
 
     return (
-        <UpdateForm Id={ decodedId } />
+        <UpdateForm Id={ decodedIdTesis } />
     )
 }

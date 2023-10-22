@@ -1,6 +1,5 @@
-const withMT = require("@material-tailwind/react/utils/withMT");
 /** @type {import('tailwindcss').Config} */
-module.exports = withMT({
+module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -23,12 +22,7 @@ module.exports = withMT({
         poppins: ['var(--font-poppins)'],
         roboto: ['var(--font-roboto)'],
       },
-      screens: {
-        sm: "540px",
-        md: "750px",
-        lg: "1170px",
-      }
     },
   },
   plugins: [],
-});
+};

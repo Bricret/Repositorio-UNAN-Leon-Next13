@@ -70,24 +70,27 @@ export const UpdateForm = ({ Id }) => {
     return (
         <main className="flex-1 overflow-auto p-4">
             <div className="grid gap-4 ">
-            <h1 class="text-center md:text-3xl text-xl font-extrabold font-poppins text-[#2E2D29CC] cursor-default">Actualice la Tesis aqui</h1>
+            <h1 className="text-center md:text-3xl text-xl font-extrabold font-poppins text-[#2E2D29CC] cursor-default">Actualice la Tesis aqui</h1>
                 <form className="space-y-6" onSubmit={ handleSubmit }>
                     {
                         inputs.map((input) => (
                             <div className="relative h-10 w-full" key={input.id}>
-                                <label className="absolute -top-6 left-0 px-2 py-1 text-gray-600 text-xs font-bold tracking-wider" >{input.name}</label>
+                                <label htmlFor={input.id} className="absolute -top-6 left-0 px-2 py-1 text-gray-600 text-xs font-bold tracking-wider">{input.name}</label>
                                 <input 
                                     name={ input.name }
                                     className="h-10 w-full border-gray-300 px-2 rounded-lg outline-none ring-2 ring-blue-300 focus:ring-blue-600 border-transparent"
                                     placeholder=''
                                     required={true}
-                                    value={inputStates[input.name]} // Usar el objeto para asignar el valor correcto
+                                    id={input.id}
+                                    value={ inputStates[input.name] } // Usar el objeto para asignar el valor correcto
                                     onChange={handleChange} // Agregar manejador de cambio
                                 />
                             </div>
                         ))
                     }
-                    <AlertForTesis type={'Actualizar'} text={'La tesis se ha Actualizado correctamente en la base de datos!'} title={'Tesis Actualizada'} color={'blue'}/>
+
+                    <AlertForTesis accion={'Actualizar'} text={'La tesis se ha Actualizado correctamente en la base de datos!'} title={'Tesis Actualizada'} color={'bg-blue-500'}/>
+
                 </form>
             </div>
         </main>

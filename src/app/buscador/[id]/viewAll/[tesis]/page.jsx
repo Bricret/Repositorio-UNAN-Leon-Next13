@@ -13,7 +13,7 @@ export default async function viewPage ({ params }) {
     return (
     <main className={`flex-1 overflow-auto px-4 pt-4  ${ data.length === 0 ? 'hidden' : '' }`}>
         <section className="grid mb-4">
-            <article className="md:gap-10 rounded-lg bg-gray-800 md:flex md:flex-row flex flex-col md:pt-8 md:pb-6 md:pr-6 px-4 py-6">
+            <article className="md:gap-10 rounded-lg bg-zinc-800 md:flex md:flex-row flex flex-col md:pt-8 md:pb-6 md:pr-6 px-4 py-6">
                 <Image 
                     src={logo} 
                     alt="logo"

@@ -7,7 +7,7 @@ export const MidSite = () => {
         <Image
             src={backImage}
             alt="edificio UNAN"
-            className=" md:h-screen h-96 grid text-center bg-cover bg-center layout-center bg-no-repeat"
+            className="h-screen w-full text-center bg-cover bg-center layout-center bg-no-repeat"
         />
         
         <article className='md:px-16 px-12 md:py-40 py-14 md:w-3/4'>

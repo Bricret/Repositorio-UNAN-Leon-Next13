@@ -1,6 +1,5 @@
 'use client'
 
-
 import { Nav1 } from "./Nav1"
 import { LogoType } from "../logo/LogoType"
 import { BurgerMenu } from "./BurgerMenu"

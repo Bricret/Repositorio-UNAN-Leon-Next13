@@ -4,11 +4,10 @@ import { Cards } from "./components/facultades/Cards";
 import { Header } from "./components/headers/Header";
 import { Hero } from "./components/hero/Hero";
 
-
-
-export default function Home() {
+export default function HomePage() {
 
   return (
+
     <>
       <Header />
 
