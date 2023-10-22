@@ -9,7 +9,7 @@ import { MdPowerSettingsNew } from "react-icons/md"
 export const UserAccount = ({size = '-right-6'}) => {
 
   const [clic, setClic] = useState(false)
-
+    const style = 'brightness(0) invert(1)';
   const { onLogout } = UseLogs();
 
   return (

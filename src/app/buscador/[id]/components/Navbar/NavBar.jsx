@@ -36,7 +36,7 @@ export const NavBar = () => {
           <div className={ login ? 'hidden' : 'md:block hidden lg:w-[8rem] w-20 md:bg-red-400 md:hover:bg-red-600 bg-transparent  text-white font-bold px-3  py-2 lg:rounded-full rounded-2xl' }>
             <ButtonLogin />
           </div>
-          <div className={`relative ${ login ? 'block' : 'hidden' }`}>
+          <div className={`relative ${ login ? 'md:block hidden md:w-30 md:mr-6 mr-0 md:py-2 py-0  w-auto' : 'hidden' }`}>
               <UserAccount />
           </div>
   </nav>
