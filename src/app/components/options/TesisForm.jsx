@@ -24,7 +24,7 @@ export const TesisForm = () => {
     <>
     <main className="flex-1 overflow-auto p-4">
         <article className="grid gap-4">
-        <h1 class="text-center md:text-3xl text-xl font-extrabold font-poppins text-[#2E2D29CC] cursor-default">Ingrese una nueva tesis</h1>
+        <h1 className="text-center md:text-3xl text-xl font-extrabold font-poppins text-[#2E2D29CC] cursor-default">Ingrese una nueva tesis</h1>
             <form className="space-y-4" onSubmit={ handleSubmitTesis }>
                 {
                     inputs.map((input) => (
